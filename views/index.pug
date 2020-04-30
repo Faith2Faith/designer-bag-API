@@ -1,0 +1,84 @@
+html
+head
+    link(rel="stylesheet" href="/style.css")
+    script(src="../bagdata.js")
+    body
+     h1.title.headersCentered Faith's Bag Collection 
+     h2.headersCentered What bags are you interested in ?
+    ul.list 
+      p Choose one of the following:
+      li.listItems 
+        p 
+          strong GET 
+          | /allBags
+        div#getAll
+            p Method: GET 
+            p Route: http://localhost:2035/bags/allBags 
+            p Headers:   
+            p Description: These are all of the bags in the collection.
+      li.listItems 
+        p 
+          strong POST 
+          | /allBags
+        div 
+            p Method: POST 
+            p Route: http://localhost2035/bags/allBags
+            p Headers: Content-Type application/json
+            p Required Fields: {  name, designer, type, color,  }
+            p Description: Adds new bag data to the data provided in the body. 
+      li.listItems 
+        p 
+          strong GET 
+          | /BagsByDesigner
+        div 
+            p Method: GET 
+            p Route: http://localhost2035/bags/bagsByDesigner 
+            p Headers:   
+            p Description: Return list of all bags matching designer provided.  
+      li.listItems 
+        p 
+          strong Patch 
+          | /bagsByDesigner
+        div 
+            p Method: Patch
+            p Route: http://localhost2035/cookies/bagsByDesigner
+            p Headers: Content-Type application/json
+            p Required Fields: { name, designer, type, color, }
+            p Description: Updates bags associated with the designer provided. 
+      li.listItems 
+        p 
+          strong DELETE 
+          | /bagsByDesigner
+        div 
+            p Method: DELETE 
+            p Route: http://localhost2035/bags/
+            p Headers:   
+            p Description: Deletes the bags associated with the designer provided.
+      li.listItems 
+        p 
+          strong GET 
+          | /BagsByColor
+        div 
+            p Method: GET 
+            p Route: http://localhost2035/bags/bagsByColor
+            p Headers:   
+            p Description: Gets all bags matching the provided color. 
+      li.listItems 
+        p 
+          strong GET 
+          | /bagsByName
+        div 
+            p Method: GET 
+            p Route: http://localhost2035/bags/bagsByName
+            p Headers:   
+            p Description: Gets all bags matching the provided name 
+      li.listItems 
+        p 
+          strong GET 
+          | /bagsByType
+        div 
+              p Method: GET 
+              p Route: http://localhost2035/bags/bagsByType
+              p Headers:    
+              p Description: Gets all bags matching the provided type.   
+    

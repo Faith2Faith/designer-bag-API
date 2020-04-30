@@ -1,0 +1,31 @@
+{
+  "name": "designer-bag-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "./node_modules/.bin/nodemon index.js",
+    "lint": "npm run lint: puglint && npm run lint:eslint",
+    "lint:eslint": "./node_modules/.bin/eslint --format codeframe.",
+    "lint:puglint": "./node_modules/.bin/pug-lint .",
+
+    "lint:fix": "./node_modules/.bin/eslint -fix --format codeframe.",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Faith2Faith/designer-bag-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Faith2Faith/designer-bag-API/issues"
+  },
+  "homepage": "https://github.com/Faith2Faith/designer-bag-API#readme"
+}
