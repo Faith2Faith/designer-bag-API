@@ -5,7 +5,7 @@ const sinonChai = require('sinon-chai')
 const models = require('../../models')
 const { afterEach, beforeEach, describe, it } = require('mocha')
 const { BagsList, singleBags, BagsSize, tagsList } = require('../mocks/Bags')
-const { getAllBags, saveNewBags, getBagsByNameWithaboutId, deleteBagsByName } = require('../../controllers/Bags')
+const { getAllBags, saveNewBags, getBagsByNameWithaboutId, deleteBagsByName } = require('../../controllers/bags')
 const { aboutBagsBySize, aboutBagsByType } = require('../../controllers/abouts')
 const { getBagsByTags } = require('../../controllers/tags')
 
@@ -93,7 +93,7 @@ describe('Controllers - Bags', () => {
 
       expect(stubbedCreate).to.have.been.callCount(0)
       expect(response.status).to.have.been.calledWith(400)
-      expect(stubbedStatusSend).to.have.been.calledWith('Required information: name, description, type, Sie, and tags.')
+      expect(stubbedStatusSend).to.have.been.calledWith('Required information: name, description, type, size, and tags.')
     })
 
     it('returns a 500 with an error message when the database call throws an error', async () => {
@@ -284,7 +284,7 @@ describe('Controllers - Bags', () => {
 
       expect(stubbedTagsFindAll).to.have.been.calledWith({ include: [{ model: models.Bags }], where: { tag: 'crossbody' }, })
       expect(response.status).to.have.been.calledWith(500)
-      expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve Bags by tag, please try again.')
+      expect(stubbedStatusSend).to.have.been.calledWith('Unable to retrieve Bag by tag, please try again.')
     })
   })
 })

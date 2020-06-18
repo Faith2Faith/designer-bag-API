@@ -26,7 +26,7 @@
     "dev:migrate": "./node_modules/.bin/env-cmd ./node_modules/.bin/sequelize db:migrate --env development --config ./config/sequelize.js",
     "lint": "./node_modules/.bin/eslint --format codeframe .",
     "lint:fix": "./node_modules/.bin/eslint --fix --format codeframe .",
-    "test": "./node_modules/.bin/mocha tests/**/*.tests.js"
+    "test": "./node_modules/.bin/mocha tests/**/*.test.js"
   },
   "repository": {
     "type": "git",
